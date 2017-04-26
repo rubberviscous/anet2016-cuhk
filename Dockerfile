@@ -40,7 +40,7 @@ WORKDIR /app/3rd-party/opencv-2.4.12
 RUN mkdir build
 WORKDIR /app/3rd-party/opencv-2.4.12/build
 RUN cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_TBB=ON  -D WITH_V4L=ON  -D WITH_QT=ON -D WITH_OPENGL=ON ..
-RUN make -j32
+RUN make -j"$(nproc)"
 RUN cp /app/3rd-party/opencv-2.4.12/build/lib/cv2.so /app
 
 # build dense_flow
