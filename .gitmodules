@@ -1,6 +1,6 @@
 [submodule "lib/caffe-action"]
 	path = lib/caffe-action
-	url = https://github.com/yjxiong/caffe
+	url = https://github.com/rubberviscous/caffe
         branch = action_recog
 [submodule "lib/dense_flow"]
 	path = lib/dense_flow

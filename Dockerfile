@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 RUN git clone --recursive https://github.com/rubberviscous/anet2016-cuhk.git
+WORKDIR /app/anet2016-cuhk
+RUN git submodule update --init
+WORKDIR /app
 # install Caffe dependencies
 RUN apt-get -qq install -y libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev
 RUN apt-get -qq install -y --no-install-recommends libboost1.55-all-dev
